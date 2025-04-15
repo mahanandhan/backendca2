@@ -31,7 +31,7 @@ app.delete('/users/:id', (req, res) => {
     try {
         const user = users.find((u) => u.id === id);
         if(!user){
-            return res.json({success: false, message: true});
+            return res.json({success: false, message: 'user not found'});
         }
         const index = users.findIndex((u) => u.id === id);
         if(index !== -1){
